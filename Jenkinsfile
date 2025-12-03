@@ -13,14 +13,14 @@ pipeline {
         stage('Build') {
             steps {
                 echo "Building the application without tests..."
-                sh 'mvn clean install -DskipTests'
+                bat'mvn clean install -DskipTests'
             }
         }
 
         stage('Package') {
             steps {
                 echo "Packaging application..."
-                sh 'mvn package -DskipTests'
+                bat 'mvn package -DskipTests'
             }
             post {
                 success {
